@@ -1,13 +1,13 @@
 {
-    "name": "@elasticio/petstore-component-nodejs",
+    "name": "@elasticio/compeon-component-nodejs",
     "version": "0.0.1",
-    "description": "elastic.io component for the Petstore API",
+    "description": "elastic.io component for the Compeon API",
     "scripts": {
         "test": "exit 0"
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:elasticio/petstore-component-nodejs.git"
+        "url": "git@github.com:elasticio/compeon-component-nodejs.git"
     },
     "author": "elastic.io GmbH",
     "license": "BSD-2-Clause",

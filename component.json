@@ -4,17 +4,24 @@
   "docsUrl": "https://github.com/elasticio/compeon-component-nodejs",
   "credentials": {
     "fields": {
-      "email": {
+      "url": {
+        "label": "Url",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "note": "Base Url to Compeon API.",
+        "default": " https://api.compeon.de"
+      },
+      "user_email": {
         "label": "Email",
         "required": true,
         "viewClass": "TextFieldView",
         "note": "Please use <b>no_auth</b> as email to use only methods which reqire no authentication."
       },
-      "password": {
+      "user_password": {
         "label": "Password",
         "required": true,
         "viewClass": "PasswordFieldView",
-        "note": "Please use <b>no_auth</b> as email to use only methods which reqire no authentication."
+        "note": "Password to authenticate."
       }
     }
   },
