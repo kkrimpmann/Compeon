@@ -18,9 +18,7 @@ function verify(credentials) {
     const user_email = credentials.user_email;
     const user_password = credentials.user_password;
 
-    if (!apiKey) {
-        throw new Error('API key is missing');
-    }
+    console.log("verifying credentials at %s for user %s", baseUrl, user_email);
 
     // sending a request to the most simple endpoint of the target API
     const requestOptions = {
