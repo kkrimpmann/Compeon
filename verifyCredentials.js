@@ -14,7 +14,9 @@ module.exports = verify;
 function verify(credentials) {
 
     // access the value of the apiKey field defined in credentials section of component.json
-    const apiKey = credentials.apiKey;
+    const baseUrl = credentials.url;
+    const user_email = credentials.user_email;
+    const user_password = credentials.user_password;
 
     if (!apiKey) {
         throw new Error('API key is missing');
@@ -22,13 +24,21 @@ function verify(credentials) {
 
     // sending a request to the most simple endpoint of the target API
     const requestOptions = {
-        uri: 'https://petstore.elastic.io/v2/user/me',
+        uri: `${baseUrl}/v1/session`,
         headers: {
-            'api-key': apiKey
+            'Content-Type': 'application/vnd.api+json'
         },
-        json: true
+        json: true,
+        body: {
+          data: {
+            attributes: {
+              email: user_email,
+              password: user_password
+            }
+          }
+        }
     };
 
     // if the request succeeds, we can assume the api key is valid
-    return request.get(requestOptions);
+    return request.post(requestOptions);
 }
