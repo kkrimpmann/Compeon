@@ -22,15 +22,6 @@
     "inquiry_consider_subsidies": { "type": "boolean" },
     "inquiry_favored_decision_date": { "type": "string" },
     "inquiry_purpose_kind": { "type": "string" },
-    "inquiry_product_kind": { "type": "string" },
-    "inquiry_goods_estimated_delivery_date": { "type": "string" },
-    "inquiry_goods_purchase_price": { "type": "integer" },
-    "inquiry_goods_description": { "type": "string" },
-    "inquiry_goods_supplier": { "type": "string" },
-    "inquiry_loan_kind": { "type": "string" },
-    "inquiry_loan_fixed_interest_rate": { "type": "boolean" },
-    "inquiry_loan_term_in_months": { "type": "integer" },
-    "inquiry_loan_already_on_hand_at_bank": { "type": "boolean" },
-    "inquiry_loan_interested_in_alternative_financing": { "type": "boolean" }
+    "inquiry_product_kind": { "type": "string" }
   }
 }
