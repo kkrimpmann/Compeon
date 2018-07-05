@@ -20,6 +20,10 @@ function verify(credentials) {
 
     console.log("verifying credentials at %s for user %s", baseUrl, user_email);
 
+    if( user_email == 'no_auth' ) { 
+      console.log("skipping session request for user_email '%s'", user_email);
+      return true;
+    }
     // sending a request to the most simple endpoint of the target API
     const requestOptions = {
         uri: `${baseUrl}/v1/session`,

@@ -31,13 +31,6 @@
       "type": "polling",
       "title": "Get session token by user and password",
       "fields": {
-        "url": {
-          "label": "Base Url",
-          "required": true,
-          "viewClass": "TextFieldView",
-          "default": "https://api.compeon.de",
-          "note": "Enter the base url to compeon API"
-        }
       },
       "metadata": {
         "out": "./lib/schemas/getSession.out.json"
