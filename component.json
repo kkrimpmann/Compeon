@@ -38,5 +38,31 @@
     }
   },
   "actions": {
+    "post_inquiry_new_user_new_company": {
+      "main": "./lib/actions/postInquiryNewUserNewCompany.js",
+      "type": "polling",
+      "title": "New inquiry with new user and new company",
+      "fields": {
+        "user_prefix": {
+          "label": "variable prefix for user attributes",
+          "viewClass": "TextFieldView",
+          "note": "All user attributes are mapped from incoming fields prefixed with this string. (default: user_)"
+        },
+        "company_prefix": {
+          "label": "variable prefix for company attributes",
+          "viewClass": "TextFieldView",
+          "note": "All company attributes are mapped from incoming fields prefixed with this string. (default: company_)"
+        },
+        "inquiry_prefix": {
+          "label": "variable prefix for inquiry attributes",
+          "viewClass": "TextFieldView",
+          "note": "All inquiry attributes are mapped from incoming fields prefixed with this string. (default: inquiry_)"
+        }
+      },
+      "metadata": {
+        "in": "./lib/schemas/post_inquiry_new_user_new_company.in.json",
+        "out": "./lib/schemas/post_inquiry_new_user_new_company.out.json"
+      }
+    }
   }
 }
