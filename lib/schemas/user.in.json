@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "email": { "type": "string", "format": "email", "required": true },
+    "password": { "type": "string", "required": true },
+    "salutation": { "type": "string" },
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "telephone": { "type": "string", "format": "phone" },
+    "mobile_phone": { "type": "string", "format": "phone" },
+    "terms_and_conditions_accepted": { "type": "boolean" }
+  }
+}

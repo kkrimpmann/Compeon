@@ -62,6 +62,16 @@
       "metadata": {
         "in": "./lib/schemas/post_inquiry_new_user_new_company.in.json",
         "out": "./lib/schemas/post_inquiry_new_user_new_company.out.json"
+      },
+      "user": {
+        "main": "./lib/actions/user.js",
+        "type": "polling",
+        "title": "Add a new User object",
+        "fields": {},
+        "metadata": {
+          "in": "./lib/schemas/user.in.json",
+          "out": "./lib/schemas/user.out.json"
+        }
       }
     }
   }
