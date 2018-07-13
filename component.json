@@ -83,6 +83,16 @@
         "in": "./lib/schemas/company.in.json",
         "out": "./lib/schemas/company.out.json"
       }
+    },
+    "inquiry": {
+      "main": "./lib/actions/inquiry.js",
+      "type": "polling",
+      "title": "Add a new inquiry object",
+      "fields": {},
+      "metadata": {
+        "in": "./lib/schemas/inquiry.in.json",
+        "out": "./lib/schemas/inquiry.out.json"
+      }
     }
 
   }

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "excluded_bank_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additional_information_for_compeon": { "type": "string" },
+    "amount": { "type": "integer", "required": true },
+    "consider_subsidies": { "type": "boolean"} ,
+    "favored_decision_date": { "type": "string", "required": true },
+    "purpose_kind": { "type": "string", "required": true },
+    "product_kind": { "type": "string", "required": true }
+  }
+}
