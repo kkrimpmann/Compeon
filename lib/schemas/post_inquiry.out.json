@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "result": { "type": "string", "enum": ["ok", "error"] },
+    "user_id": { "type": "integer" },
+    "company_id": { "type": "integer" },
+    "inquiry_id": { "type": "string" }
+  }
+}

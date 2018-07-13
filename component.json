@@ -93,7 +93,18 @@
         "in": "./lib/schemas/inquiry.in.json",
         "out": "./lib/schemas/inquiry.out.json"
       }
+    },
+    "post_inquiry": {
+      "main": "./lib/actions/post_inquiry.js",
+      "type": "polling",
+      "title": "Post a new inquiry object",
+      "fields": {},
+      "metadata": {
+        "in": "./lib/schemas/post_inquiry.in.json",
+        "out": "./lib/schemas/post_inquiry.out.json"
+      }
     }
+
 
   }
 }

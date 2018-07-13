@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "user_type": { "type": "string", "enum": ["new", "existing"] },
+        "email": { "type": "string", "format": "email", "required": true },
+        "password": {
+          "type": "string",
+          "required": true
+        },
+        "salutation": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string",
+          "format": "phone"
+        },
+        "mobile_phone": {
+          "type": "string",
+          "format": "phone"
+        },
+        "terms_and_conditions_accepted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "company": {
+      "type": "object",
+      "properties": {
+        "company_type": { "type": "string", "enum": ["new", "existing"]},
+        "id": { "type": "integer" },
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "crefo_id": { "type": "string" },
+        "legal_form": { "type": "string" },
+        "name": { "type": "string" },
+        "zip_code": { "type": "string" },
+        "turnover_class": {
+          "type": "string",
+          "enum": [
+            "0_to_10_thousand",
+            "10_to_20_thousand",
+            "20_to_30_thousand",
+            "30_to_40_thousand",
+            "40_to_50_thousand",
+            "50_to_75_thousand",
+            "75_to_100_thousand",
+            "100_to_250_thousand",
+            "250_to_500_thousand",
+            "500_thousand_to_1_million",
+            "1_million_to_2_5_million",
+            "2_5_to_5_million",
+            "5_to_10_million",
+            "10_to_25_million",
+            "25_to_50_million",
+            "50_to_100_million",
+            "more_than_100_million"
+          ]
+        },
+        "founding_year": { "type": "integer" }
+      }
+    },
+    "inquiry": {
+      "type": "object",
+      "properties": {
+        "excluded_bank_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "additional_information_for_compeon": { "type": "string" },
+        "amount": { "type": "integer", "required": true },
+        "consider_subsidies": { "type": "boolean"} ,
+        "favored_decision_date": { "type": "string", "required": true },
+        "purpose_kind": { "type": "string", "required": true },
+        "product_kind": { "type": "string", "required": true },
+
+        "consider_subsidies_detail": {
+          "type": "object",
+          "properties": {
+            "annual_net_profit_or_loss_class": {
+              "type": "string",
+              "required": true,
+              "enum": [ "loss", "zero", "1_to_10_thousand", "10_to_20_thousand", "20_to_30_thousand", "30_to_40_thousand", "40_to_50_thousand", "50_to_75_thousand", "75_to_100_thousand", "100_to_250_thousand", "250_to_500_thousand", "500_to_750_thousand", "750_thousand_to_1_million", "1_to_2_5_million", "2_5_to_5_million", "5_to_10_million", "10_to_50_million", "more_than_50_million" ]
+            },
+            "negative_equity_capital": { "type": "boolean", "required": true },
+            "innovative_company": { "type": "boolean", "required": true },
+            "energy_efficient":	{ "type": "boolean", "required": true }
+          }
+        },
+
+        "purpose_kind_goods_detail": {
+          "type": "object",
+          "properties": {
+            "goods_estimated_delivery_date": { "type": "string", "required": true },
+            "goods_purchase_price": { "type": "integer", "required": true },
+            "goods_description": { "type": "string", "required": true },
+            "goods_supplier": { "type": "string", "required": true }
+          }
+        },
+
+        "product_kind_loan_detail": {
+          "type": "object",
+          "properties": {
+            "loan_kind": { "type": "string", "required": true, "enum": [ "amortisable", "annuity", "payable_at_term" ] },
+            "loan_term_in_months": { "type": "integer", "required": true },
+            "loan_fixed_interest_rate": { "type": "boolean"	},
+            "loan_interest_period_in_months": { "type": "integer" },
+            "loan_already_on_hand_at_bank": { "type": "boolean", "required": true },
+            "loan_interested_in_alternative_financing": { "type": "boolean", "required": true },
+            "loan_description": { "type": "string" }
+          }
+        }
+
+
+
+      }
+    }
+  }
+}
