@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "object",
+      "properties": {
+        "company_type": { "type": "string", "enum": ["new", "existing"]},
+        "id": { "type": "integer" },
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "crefo_id": { "type": "string" },
+        "legal_form": { "type": "string" },
+        "name": { "type": "string" },
+        "zip_code": { "type": "string" },
+        "turnover_class": {
+          "type": "string",
+          "enum": [
+            "0_to_10_thousand",
+            "10_to_20_thousand",
+            "20_to_30_thousand",
+            "30_to_40_thousand",
+            "40_to_50_thousand",
+            "50_to_75_thousand",
+            "75_to_100_thousand",
+            "100_to_250_thousand",
+            "250_to_500_thousand",
+            "500_thousand_to_1_million",
+            "1_million_to_2_5_million",
+            "2_5_to_5_million",
+            "5_to_10_million",
+            "10_to_25_million",
+            "25_to_50_million",
+            "50_to_100_million",
+            "more_than_100_million"
+          ]
+        },
+        "founding_year": { "type": "integer" }
+      }
+    }
+
+  }
+}

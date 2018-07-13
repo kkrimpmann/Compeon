@@ -73,6 +73,17 @@
         "in": "./lib/schemas/user.in.json",
         "out": "./lib/schemas/user.out.json"
       }
+    },
+    "company": {
+      "main": "./lib/actions/company.js",
+      "type": "polling",
+      "title": "Add a new company object",
+      "fields": {},
+      "metadata": {
+        "in": "./lib/schemas/company.in.json",
+        "out": "./lib/schemas/company.out.json"
+      }
     }
+
   }
 }
