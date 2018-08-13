@@ -49,4 +49,58 @@ exports.test = (() => {
       })
     })
   })
+
+  describe('post new inquiry existing user, new company', function () {
+    it('should complete successfully', function () {
+      const new_inquiry = {
+        user: {
+          user_type: 'existing',
+          email: 'max.mustermann2@example.com',
+          password: '12345678'
+        },
+        company: {
+          company_type: 'new',
+          street: 'Hohe Straße 3',
+          city: 'Berlin',
+          crefo_id: '7687104071',
+          legal_form: 'Haftungsbeschränkte Kommanditgesellschaft (GmbH & Co. KG)',
+          name: 'Mustermann GmbH&Co.KG',
+          zip_code: '71925',
+          turnover_class: '0_to_10_thousand',
+          founding_year: 2000
+        },
+        inquiry: {
+          excluded_bank_codes: [ '12345678' ],
+          amount: 100000,
+          consider_subsidies: false,
+          favored_decision_date: '2018-04-24T22:31:06.125Z',
+          purpose_kind: 'goods',
+          product_kind: 'loan',
+          purpose_kind_goods_detail: {
+            goods_estimated_delivery_date: '2018-05-01T21:00:00.000+01:00',
+            goods_purchase_price: 90000,
+            goods_description: 'Ein tolles Ding',
+            goods_supplier: 'Eine tolle Firma',
+          },
+          product_kind_loan_detail: {
+            loan_kind: 'amortisable',
+            loan_fixed_interest_rate: false,
+            loan_term_in_months: 12,
+            loan_already_on_hand_at_bank: false,
+            loan_interested_in_alternative_financing: true
+          }
+        }
+      }
+      return inquiry.process(messages.newMessageWithBody(new_inquiry), {url: 'http://compeon.svc.my-cloudworks.de:3000'}).then(
+        (response) => {
+          expect(response).to.have.property('data')
+          expect(response.data).to.have.property('id')
+        }
+      )
+      Object.entries(new_inquiry).forEach((item) => {
+        expect(result.body).to.have.property('inquiry').with.have.property(item[0]).with.equal(item[1])
+      })
+    })
+  })
+
 })
