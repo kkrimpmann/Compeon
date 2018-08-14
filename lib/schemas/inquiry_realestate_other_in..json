@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "user": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string", "required": true, "enum": ["new", "existing", "credentials"]},
+                "email": { "type": "string", "format": "email" },
+                "password": { "type": "string" },
+                "salutation": { "type": "string" },
+                "first_name": { "type": "string" },
+                "last_name": { "type": "string" },
+                "telephone": { "type": "string", "format": "phone" },
+                "mobile_phone": { "type": "string", "format": "phone" },
+                "terms_and_conditions_accepted": { "type": "boolean" }
+            }
+        },
+        "company": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string", "required": true, "enum": ["new", "existing"]},
+                "id": { "type": "integer" },
+                "street": { "type": "string" },
+                "city": { "type": "string" },
+                "crefo_id": { "type": "string" },
+                "legal_form": { "type": "string" },
+                "name": { "type": "string" },
+                "zip_code": { "type": "string" },
+                "turnover_class": { "type": "string", "enum": ["0_to_10_thousand", "10_to_20_thousand", "20_to_30_thousand", "30_to_40_thousand", "40_to_50_thousand", "50_to_75_thousand", "75_to_100_thousand", "100_to_250_thousand", "250_to_500_thousand", "500_thousand_to_1_million", "1_million_to_2_5_million", "2_5_to_5_million", "5_to_10_million", "10_to_25_million", "25_to_50_million", "50_to_100_million", "more_than_100_million"] },
+                "founding_year": { "type": "integer" }
+            }
+        },
+        "inquiry": {
+            "type": "object",
+            "properties": {
+                "excluded_bank_codes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                },
+                "additional_information_for_compeon": { "type": "string" },
+                "amount": { "type": "integer", "required": true },
+                "consider_subsidies": { "type": "boolean"} ,
+                "favored_decision_date": { "type": "string", "required": true },
+                "annual_net_profit_or_loss_class": { "type": "string", "enum": ["loss", "zero", "1_to_10_thousand", "10_to_20_thousand", "20_to_30_thousand", "30_to_40_thousand", "40_to_50_thousand", "50_to_75_thousand", "75_to_100_thousand", "100_to_250_thousand", "250_to_500_thousand", "500_to_750_thousand", "750_thousand_to_1_million", "1_to_2_5_million", "2_5_to_5_million", "5_to_10_million", "10_to_50_million", "more_than_50_million" ] },
+                "negative_equity_capital": { "type": "boolean" },
+                "innovative_company": { "type": "boolean" },
+                "energy_efficient": { "type": "boolean" },
+                "real-estate-project": { "type": "string", "enum": [ "new_building", "purchase", "follow_up", "reconstruction", "development_project" ] },
+
+                "real-estate-project-new_building-detail": {
+                    "type": "object",
+                    "properties": {
+                        "real-estate-kind": { "type": "string", "enum": [ "business_building", "hotel", "office_building", "other", "property_development", "residence", "single_or_multi_family_house", "specialty_shopping_center", "warehouse_or_production_hall" ] },
+                        "real-estate-kfw-standard": { "type": "string", "enum": ["none", "40_plus", "40", "55"] }
+                    }
+                },
+                "real-estate-project-purchase-detail": {
+                    "type": "object",
+                    "properties": {
+                        "real-estate-kind": { "type": "string", "enum": [ "business_building", "hotel", "office_building", "other", "property_development", "residence", "single_or_multi_family_house", "specialty_shopping_center", "warehouse_or_production_hall" ] },
+                        "real-estate-scheduled-date": { "type": "string","format": "[0-1][0-9]\\.[0-9]{4}" },
+                        "real-estate-purchase-price": { "type": "int" }
+                    }
+                },
+                "real-estate-project-reconstruction-detail": {
+                    "type": "object",
+                    "properties": {
+                        "real-estate-kfw-standard": { "type": "string", "enum": ["none", "40_plus", "40", "55"] },
+                        "real-estate-reconstruction-costs": {"type": "int" }	
+                    }
+                },
+                "real-estate-project-follow_up-detail": {
+                    "type": "object",
+                    "properties": {
+                        "real-estate-follow-up-amount": { "type": "int" }
+                    }
+                },
+                "real-estate-project-development-detail": {
+                    "type": "object",
+                    "properties": {
+                        "real-estate-development-project-amount": {"type": "int" },
+                        "real-estate-development-project-description": {"type": "string" }
+                    }
+                },
+                "real-estate-additional-costs": { "type": "int" },
+                "real-estate-construction-date": { "type": "string", "format": "[0-1][0-9]\\.[0-9]{4}" },
+                "real-estate-land-size": { "type": "int" },
+                "real-estate-building-size": { "type": "int" },
+                "real-estate-residual-percentage": { "type": "int", "minimum": 0, "maximum": 100 },
+                "real-estate-heritable-building-right": { "type": "bool" },
+                "real-estate-heritable-building-right-obligation": { "type": "int" },
+                "real-estate-usage-kind": { "type": "string", "enum": [ "own_use", "third_party_rental", "both", "other" ] },
+                "real-estate-cold-rent": { "type": "int" },
+                "real-estate-taxation": { "type": "string", "enum": [ "net", "gross" ] },
+                "real-estate-rented-out-area": {"type": "int" },
+                "real-estate-street": { "type": "string" },
+                "real-estate-street-number": {"type": "string" },
+                "real-estate-zip-code": {"type": "string", "pattern": "[0-9]{5}" },
+                "real-estate-city": {"type": "string" }
+            }
+        }
+
+    }
+}

@@ -111,8 +111,17 @@
       "metadata":{
         "in": "./lib/schemas/inquiry_other_other_in.json",
         "out": "./lib/schemas/post_inquiry.out.json"
+      },
+      "inquiry_realestate_other": {
+        "main": "./lib/actions/post_inquiry.js",
+        "type": "polling",
+        "title": "New inquiry, purpose-kind real-estate, product-kind other",
+        "fields": {},
+        "metadata":{
+          "in": "./lib/schemas/inquiry_realestate_other_in.json",
+          "out": "./lib/schemas/post_inquiry.out.json"
+        }
       }
-
     }
   }
 }
