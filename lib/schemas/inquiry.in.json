@@ -11,7 +11,7 @@
     "amount": { "type": "integer", "required": true },
     "consider_subsidies": { "type": "boolean"} ,
     "favored_decision_date": { "type": "string", "required": true },
-    "purpose_kind": { "type": "string", "required": true },
-    "product_kind": { "type": "string", "required": true }
+    "purpose_kind": { "type": "string", "required": true, "enum":["real_estate","vehicle","debt_rescheduling","goods","machine","other"] },
+    "product_kind": { "type": "string", "required": true, "enum":["loan", "leasing", "overdraft", "factoring", "investment", "other"] }
   }
 }

@@ -30,8 +30,7 @@
       "main": "./lib/triggers/getSession.js",
       "type": "polling",
       "title": "Get session token by user and password",
-      "fields": {
-      },
+      "fields": {},
       "metadata": {
         "out": "./lib/schemas/getSession.out.json"
       }
@@ -103,8 +102,17 @@
         "in": "./lib/schemas/post_inquiry.in.json",
         "out": "./lib/schemas/post_inquiry.out.json"
       }
+    },
+    "inquiry_other_other": {
+      "main": "./lib/actions/post_inquiry.js",
+      "type": "polling",
+      "title": "New inquiry, purpose-kind other, product-kind other",
+      "fields": {},
+      "metadata":{
+        "in": "./lib/schemas/inquiry_other_other_in.json",
+        "out": "./lib/schemas/post_inquiry.out.json"
+      }
+
     }
-
-
   }
 }
